@@ -1,6 +1,9 @@
 # syntax=docker/dockerfile:1
+ARG BUILD_FROM
+FROM $BUILD_FROM
 
 # Build
+<<<<<<< HEAD
 #FROM node:22-alpine AS build
 FROM node:22-alpine
 
@@ -21,10 +24,19 @@ COPY . .
 
 RUN node -v
 
+=======
+#FROM node:22-alpine
+
+WORKDIR /app
+
+COPY . .
+
+>>>>>>> home-assistant-addon
 RUN npm ci
 
 RUN npm run build
 
+<<<<<<< HEAD
 # Production
 #FROM node:22-alpine AS production
 #
@@ -45,6 +57,8 @@ RUN npm run build
 #    --mount=type=cache,target=/root/.npm \
 #    npm ci --omit=dev
 
+=======
+>>>>>>> home-assistant-addon
 EXPOSE 3000
 
 # Run the application.

@@ -33,6 +33,6 @@
 LICENSE
 README.md
 
-/config/
-/logs/
+#/config/
+#/logs/
 /docs/
